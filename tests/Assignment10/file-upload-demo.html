@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>File Upload Demo</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 40px; }
+    .success { color: green; margin-top: 20px; }
+  </style>
+</head>
+<body>
+  <h2>File Upload Demo</h2>
+  <form id="uploadForm">
+    <input type="file" id="fileInput" />
+    <button type="submit">Upload</button>
+  </form>
+  <div id="message"></div>
+  <script>
+    document.getElementById('uploadForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      var fileInput = document.getElementById('fileInput');
+      if (fileInput.files.length > 0) {
+        document.getElementById('message').innerHTML = '<span class="success">Successfully uploaded!</span>';
+      } else {
+        document.getElementById('message').textContent = 'Please select a file.';
+      }
+    });
+  </script>
+</body>
+</html>
